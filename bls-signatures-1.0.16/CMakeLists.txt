@@ -14,13 +14,13 @@ endif()
 
 project(BLS)
 
-set(BUILD_BLS_PYTHON_BINDINGS "1" CACHE STRING "")
-set(BUILD_BLS_TESTS "1" CACHE STRING "")
-set(BUILD_BLS_BENCHMARKS "1" CACHE STRING "")
+# set(BUILD_BLS_PYTHON_BINDINGS "1" CACHE STRING "")
+# set(BUILD_BLS_TESTS "1" CACHE STRING "")
+# set(BUILD_BLS_BENCHMARKS "1" CACHE STRING "")
 
-message(STATUS "Build python bindings: ${BUILD_BLS_PYTHON_BINDINGS}")
-message(STATUS "Build tests: ${BUILD_BLS_TESTS}")
-message(STATUS "Build benchmarks: ${BUILD_BLS_BENCHMARKS}")
+# message(STATUS "Build python bindings: ${BUILD_BLS_PYTHON_BINDINGS}")
+# message(STATUS "Build tests: ${BUILD_BLS_TESTS}")
+# message(STATUS "Build benchmarks: ${BUILD_BLS_BENCHMARKS}")
 
 # Add path for custom modules
 set(CMAKE_MODULE_PATH
@@ -86,7 +86,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
   set(MULTI "OPENMP" CACHE STRING "")
 else()
   set(TIMER "CYCLE" CACHE STRING "")
-  set(MULTI "PTHREAD" CACHE STRING "")
+  # set(MULTI "PTHREAD" CACHE STRING "")
 endif()
 
 set(CHECK "off" CACHE STRING "")
@@ -137,7 +137,7 @@ if(EMSCRIPTEN)
 else()
   # emscripten can't build python bindings, it produces only javascript
   # add_subdirectory(contrib/pybind11)
-  if(BUILD_BLS_PYTHON_BINDINGS)
-    add_subdirectory(python-bindings)
-  endif()
+  # if(BUILD_BLS_PYTHON_BINDINGS)
+  #   add_subdirectory(python-bindings)
+  # endif()
 endif()
