@@ -18,10 +18,30 @@ include_directories(
 )
 
 add_subdirectory(../bls-signatures-1.0.16 bls)
+# add_subdirectory(../bls-signatures-1.0.16/src bls)
 
 add_library(cpp
             SHARED
             src/main/cpp/cpp-adapter.cpp
             ../cpp/react-native-bls-signatures.cpp
             # cpp-adapter.cpp
+)
+
+set_target_properties(
+        cpp PROPERTIES
+        CXX_STANDARD 17
+        CXX_EXTENSIONS OFF
+        POSITION_INDEPENDENT_CODE ON
+)
+
+
+# find_package(ReactAndroid REQUIRED CONFIG)
+# find_library(log-lib log)
+
+target_link_libraries(
+        cpp
+        bls                # <-- MMKV core
+        # ${log-lib}          # <-- Logcat logger
+        # ReactAndroid::jsi   # <-- JSI
+        # android             # <-- Android JNI core
 )

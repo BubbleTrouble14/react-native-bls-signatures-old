@@ -1,5 +1,7 @@
 #include <jni.h>
 #include "react-native-bls-signatures.h"
+// using namespace bls;
+
 
 extern "C"
 JNIEXPORT jdouble JNICALL

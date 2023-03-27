@@ -8,16 +8,16 @@ export default function App() {
 
   React.useEffect(() => {
     // add(1).then(setResult);
-    multiply(1.3, 4.746)
-      .then((val) => {
-        setResult(val);
-      })
-      .catch((err) => console.log(err));
-    // add(5)
+    // multiply(1.3, 4.746)
     //   .then((val) => {
     //     setResult(val);
     //   })
     //   .catch((err) => console.log(err));
+    add(5)
+      .then((val) => {
+        setResult(val);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   return (
